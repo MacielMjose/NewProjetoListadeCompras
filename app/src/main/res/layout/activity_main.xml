@@ -12,6 +12,7 @@
         android:layout_marginTop="8dp"
         android:layout_marginBottom="612dp"
         android:text="Minhas Listas"
+        android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -34,7 +35,7 @@
         app:layout_constraintVertical_bias="0.327" />
 
     <android.support.design.widget.FloatingActionButton
-        android:id="@+id/floatingActionButton2"
+        android:id="@+id/addLista"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:clickable="true"
