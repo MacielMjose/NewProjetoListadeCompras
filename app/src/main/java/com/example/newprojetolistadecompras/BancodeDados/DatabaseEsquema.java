@@ -18,7 +18,8 @@ public class DatabaseEsquema {      //superclasse que contem os metodos para cri
 
         public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion)
         {
-            System.out.println("Teste");
+
+
         }
 
 
