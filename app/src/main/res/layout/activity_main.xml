@@ -33,4 +33,14 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.327" />
 
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/floatingActionButton2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:tooltipText="Criar Lista"
+        app:srcCompat="@android:drawable/ic_input_add"
+        tools:layout_editor_absoluteX="289dp"
+        tools:layout_editor_absoluteY="523dp" />
+
 </android.support.constraint.ConstraintLayout>
