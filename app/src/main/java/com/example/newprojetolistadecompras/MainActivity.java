@@ -22,7 +22,7 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_main);
 
         addLista = (FloatingActionButton) findViewById(R.id.addLista);
-        minhasListas = (ListView) findViewById(R.id.);
+        minhasListas = (ListView) findViewById(R.id);
 
         addLista.setOnClickListener(new View.OnClickListener() {
             @Override
