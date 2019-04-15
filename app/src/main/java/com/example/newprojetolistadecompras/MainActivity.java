@@ -7,11 +7,13 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ListView;
 import android.widget.TextView;
 
 public class MainActivity extends Activity {
 
     private FloatingActionButton addLista;
+    private ListView minhasListas;
 
 
     @Override
@@ -20,12 +22,14 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_main);
 
         addLista = (FloatingActionButton) findViewById(R.id.addLista);
+        minhasListas = (ListView) findViewById(R.id.);
 
         addLista.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 startActivity(new Intent(MainActivity.this , AddprodutoActivity.class));
+
 
             }
         });
