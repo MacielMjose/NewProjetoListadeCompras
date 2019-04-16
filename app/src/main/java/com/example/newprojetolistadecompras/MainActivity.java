@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.view.menu.ListMenuItemView;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ListView;
@@ -22,7 +23,7 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_main);
 
         addLista = (FloatingActionButton) findViewById(R.id.addLista);
-        minhasListas = (ListView) findViewById(R.id);
+        minhasListas = (ListView) findViewById(R.id.minhasListas);
 
         addLista.setOnClickListener(new View.OnClickListener() {
             @Override
