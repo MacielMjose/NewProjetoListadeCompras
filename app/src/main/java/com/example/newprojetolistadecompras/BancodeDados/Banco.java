@@ -20,7 +20,7 @@ public class Banco extends SQLiteOpenHelper {
                 "  Qtde INTEGER, " +
                 "  NomeDaLista TEXT,"+
                 "  preco REAL,"+
-                "  nome TEXT ) " );
+                "  nomeProduto TEXT ) " );
     }
 
     @Override

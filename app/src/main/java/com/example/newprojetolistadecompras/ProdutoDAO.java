@@ -5,41 +5,58 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
+import com.example.newprojetolistadecompras.BancodeDados.Banco;
+import com.example.newprojetolistadecompras.JavaClasses.Produto;
+
 import java.util.ArrayList;
 import java.util.List;
 
-public class AnotacaoDAO {
+public class ProdutoDAO {
 
-    public static final void inserir(Anotacao nota, Context context){
+    public static final void inserir(Produto produto, Context context){
+
         Banco banco = new Banco(context);
+
         ContentValues valores = new ContentValues();
-        valores.put("titulo", nota.getTitulo() );
-        valores.put("texto", nota.getTexto() );
+
+        valores.put("titulo", produto.getNome() );
+        valores.put("preco" , produto.getPreco());
+        valores.put("Quantidade", produto.getQtde());
+
+        //valores.put("texto", produto.() );
+
         SQLiteDatabase db = banco.getWritableDatabase();
-        db.insert("anotacoes", null, valores);
+        db.insert("lista", null, valores);
     }
 
-    public static final void excluir(int idNota, Context context){
+    public static final void excluir(int id, Context context){
+
         Banco banco = new Banco(context);
         SQLiteDatabase db = banco.getWritableDatabase();
-        db.delete("anotacoes", "id = "+idNota, null);
+        db.delete("anotacoes", "id = "+id, null);
     }
 
-    public static final List<Anotacao> listar(Context context){
-        List<Anotacao> lista = new ArrayList<>();
+    public static final List<Produto> listar(Context context){
+        List<Produto> lista = new ArrayList<>();
         Banco banco = new Banco(context);
         SQLiteDatabase db = banco.getReadableDatabase();
         String sql = "SELECT * FROM anotacoes ORDER BY id DESC ";
+
         Cursor cursor = db.rawQuery(sql, null);
 
         if ( cursor.getCount() > 0 ){
             cursor.moveToFirst();
+
             do{
-                Anotacao nota = new Anotacao();
-                nota.setId( cursor.getInt( 0 ) );
-                nota.setTitulo( cursor.getString( 1 ) );
-                nota.setTexto( cursor.getString( 2 ) );
-                lista.add( nota );
+
+                Produto produto = new Produto();
+                produto.setId( cursor.getInt( 0 ) );
+                produto.setNome( cursor.getString( 1 ) );
+                produto.setQtde( cursor.getInt( 2 ) );
+                produto.setPreco( cursor.getFloat( 2 ) );
+
+                lista.add( produto );
+
             }while ( cursor.moveToNext() );
         }
         return lista;

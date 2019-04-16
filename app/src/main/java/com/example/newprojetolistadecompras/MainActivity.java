@@ -22,7 +22,9 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        addLista = (FloatingActionButton) findViewById(R.id.addLista);
+
+        addLista = findViewById(R.id.addLista);
+
         minhasListas = (ListView) findViewById(R.id.minhasListas);
 
         addLista.setOnClickListener(new View.OnClickListener() {
@@ -30,7 +32,7 @@ public class MainActivity extends Activity {
             public void onClick(View v) {
 
 
-                startActivity(new Intent(MainActivity.this , AddprodutoActivity.class));
+            startActivity(new Intent(MainActivity.this, AddprodutoActivity.class));
 
 
             }

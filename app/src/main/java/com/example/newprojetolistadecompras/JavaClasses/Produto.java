@@ -4,9 +4,14 @@ public class Produto {
 
 
     private int id, Qtde;
-    private String nome;
+    private String nomeProduto;
     private float preco; //terá que ser convertido para Real para funcionar no SQLITE
 
+    @Override
+
+    public String toString() {
+        return this.nomeProduto;
+    }
 
     public int getId() {
 
@@ -26,11 +31,12 @@ public class Produto {
     }
 
     public String getNome() {
-        return nome;
+
+        return nomeProduto;
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
+    public void setNome(String nomeProduto) {
+        this.nomeProduto = nomeProduto;
     }
 
     public float getPreco() {
