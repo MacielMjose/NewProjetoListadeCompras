@@ -18,6 +18,7 @@ public class Banco extends SQLiteOpenHelper {
         db.execSQL("CREATE TABLE IF NOT EXISTS lista ( " +
                 "  id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT , " +
                 "  Qtde INTEGER, " +
+                "  NomeDaLista TEXT,"+
                 "  preco REAL,"+
                 "  nome TEXT ) " );
     }
