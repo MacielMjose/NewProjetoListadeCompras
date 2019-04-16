@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.newprojetolistadecompras.JavaClasses.Produto;
 
@@ -48,12 +49,14 @@ public class AddprodutoActivity extends AppCompatActivity {
         private void salvar(){
 
             Produto produto = new Produto();
-            //produto.setPreco(etPreco.getText().toString());
+            produto.setQtde(Integer.parseInt(etQtd.getText().toString()));
             produto.setNome(etProduto.getText().toString());
-            //produto.setPreco(etPreco.getText().toString());
+            produto.setPreco(Float.parseFloat(etPreco.getText().toString()));
             ProdutoDAO.inserir(produto , this);
+
             this.finish();
 
+            Toast.makeText( AddprodutoActivity.this,"Registro Inserido com sucesso!",Toast.LENGTH_SHORT).show();
         }
     }
 
