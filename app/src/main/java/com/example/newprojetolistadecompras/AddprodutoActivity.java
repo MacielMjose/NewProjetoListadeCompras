@@ -7,6 +7,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.example.newprojetolistadecompras.JavaClasses.Produto;
+
 public class AddprodutoActivity extends Activity {
 
     private TextView addProduto;
@@ -33,15 +35,20 @@ public class AddprodutoActivity extends Activity {
             }
         });
 
-        //private void salvarProduto(){
+        private void salvarProduto(){
 
             //Produto produto = new Produto();
 
+            Produto novoProduto = new Produto();
+            novoProduto.setNome( addProduto.getText().toString() );
+            novoProduto.setPreco( addPreco.getText().toString() );
+            novoProduto.setQtde( addQtd.getText().toString() );
 
-       // }
+           // AnotacaoDAO.inserir(nota, this);
 
+            this.finish();
 
-
+        }
 
 
     }
