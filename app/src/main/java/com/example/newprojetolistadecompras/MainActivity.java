@@ -3,18 +3,22 @@ package com.example.newprojetolistadecompras;
 import android.app.Activity;
 import android.content.Intent;
 import android.support.design.widget.FloatingActionButton;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.view.menu.ListMenuItemView;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ListView;
-import android.widget.TextView;
+
+import com.example.newprojetolistadecompras.JavaClasses.Produto;
+
+import java.util.List;
 
 public class MainActivity extends Activity {
 
     private FloatingActionButton addLista;
-    private ListView minhasListas;
+
+    ListView MinhasListas;
+    List<Produto> Lista;
+    AdapterProduto adapter;
+
 
 
     @Override
@@ -23,21 +27,37 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_main);
 
 
-        addLista = findViewById(R.id.addLista);
+        addLista = (FloatingActionButton) findViewById(R.id.addLista);
 
-        minhasListas = (ListView) findViewById(R.id.minhasListas);
+        MinhasListas = (ListView)findViewById(R.id.minhasListas);
 
         addLista.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-
             startActivity(new Intent(MainActivity.this, AddprodutoActivity.class));
-
 
             }
         });
 
 
     }
+
+    private void carregarLista(){
+
+      Lista = ProdutoDAO.listar(this);
+//manter        adapter = new ArrayAdapter(this,
+//manter        android.R.layout.simple_list_item_1, lista );
+        adapter = new AdapterProduto(this, Lista);
+        MinhasListas.setAdapter(adapter);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        carregarLista();
+    }
+
+
+
 }

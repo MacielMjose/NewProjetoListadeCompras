@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import com.example.newprojetolistadecompras.JavaClasses.Produto;
@@ -26,6 +27,7 @@ public class AdapterProduto extends BaseAdapter {
 
     @Override
     public int getCount() {
+
         return lista.size();
     }
 
@@ -46,25 +48,24 @@ public class AdapterProduto extends BaseAdapter {
 
         if( convertView == null ){
             convertView = inflater.inflate
-                    (R.layout.activity_main, null);
+                    (R.layout.layout_lista_produtos, null);
             item = new Suporte();
             item.tvCodigo = (TextView)
-                    convertView.findViewById(R.id.addLista);
+                    convertView.findViewById(R.id.tvListaCodigo);
             item.tvTitulo = (TextView)
-                    convertView.findViewById(R.id.addQtd);
+                    convertView.findViewById(R.id.tvListaTexto);
             item.tvTexto = (TextView)
-                    convertView.findViewById(R.id.addPreco);
+                    convertView.findViewById(R.id.tvListaTitulo);
 
             convertView.setTag(item);
         }else {
             item = (Suporte) convertView.getTag();
         }
 
-        Produto nota = lista.get( position );
-        item.tvCodigo.setText( String.valueOf( nota.getId() ) );
-        item.tvTitulo.setText(  nota.getId()  );
-        item.tvTexto.setText(  nota.getNome()  );
-
+        Produto produto = lista.get( position );
+        item.tvCodigo.setText( String.valueOf( produto.getId() ) );
+        item.tvTitulo.setText(  produto.getId()  );
+        item.tvTexto.setText(  produto.getNome()  );
 
 
         return convertView;
@@ -73,6 +74,7 @@ public class AdapterProduto extends BaseAdapter {
     private class Suporte{
 
         TextView tvCodigo, tvTitulo, tvTexto;
+
     }
 
 }

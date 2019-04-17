@@ -56,7 +56,7 @@ public class AddprodutoActivity extends AppCompatActivity {
 
             this.finish();
 
-            Toast.makeText( AddprodutoActivity.this,"Registro Inserido com sucesso!",Toast.LENGTH_SHORT).show();
+            Toast.makeText( AddprodutoActivity.this,"Produto Adicionado à Lista!",Toast.LENGTH_SHORT).show();
         }
     }
 

@@ -19,32 +19,33 @@ public class ProdutoDAO {
 
         ContentValues valores = new ContentValues();
 
-        valores.put("titulo", produto.getNome() );
-        valores.put("preco" , produto.getPreco());
+        valores.put("Nome_Produto", produto.getNome() );
+        valores.put("Preço" , produto.getPreco());
         valores.put("Quantidade", produto.getQtde());
 
         //valores.put("texto", produto.() );
 
         SQLiteDatabase db = banco.getWritableDatabase();
-        db.insert("lista", null, valores);
+        db.insert("Lista_Produtos", null, valores);
     }
 
     public static final void excluir(int id, Context context){
 
         Banco banco = new Banco(context);
         SQLiteDatabase db = banco.getWritableDatabase();
-        db.delete("anotacoes", "id = "+id, null);
+        db.delete("Lista_Produtos", "id = "+id, null);
     }
 
     public static final List<Produto> listar(Context context){
         List<Produto> lista = new ArrayList<>();
         Banco banco = new Banco(context);
         SQLiteDatabase db = banco.getReadableDatabase();
-        String sql = "SELECT * FROM anotacoes ORDER BY id DESC ";
+        String sql = "SELECT * FROM lista ORDER BY id DESC ";
 
         Cursor cursor = db.rawQuery(sql, null);
 
         if ( cursor.getCount() > 0 ){
+
             cursor.moveToFirst();
 
             do{
