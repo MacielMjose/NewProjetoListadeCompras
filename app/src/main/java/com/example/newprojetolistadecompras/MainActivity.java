@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.support.design.widget.FloatingActionButton;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ListView;
 
@@ -46,6 +47,9 @@ public class MainActivity extends Activity {
     private void carregarLista(){
 
       Lista = ProdutoDAO.listar(this);
+
+        Log.i("cont","total: " + Lista.size());
+
 //manter        adapter = new ArrayAdapter(this,
 //manter        android.R.layout.simple_list_item_1, lista );
         adapter = new AdapterProduto(this, Lista);

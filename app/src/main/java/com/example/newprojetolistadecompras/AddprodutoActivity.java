@@ -38,7 +38,6 @@ public class AddprodutoActivity extends AppCompatActivity {
 
             @Override
             public void onClick(View v) {
-
                 salvar();
             }
 

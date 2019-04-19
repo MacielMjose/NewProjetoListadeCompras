@@ -19,9 +19,9 @@ public class ProdutoDAO {
 
         ContentValues valores = new ContentValues();
 
-        valores.put("Nome_Produto", produto.getNome() );
-        valores.put("Preço" , produto.getPreco());
-        valores.put("Quantidade", produto.getQtde());
+        valores.put("NomeProduto", produto.getNome() );
+        valores.put("Preco" , produto.getPreco());
+        valores.put("Qtde", produto.getQtde());
 
         //valores.put("texto", produto.() );
 
