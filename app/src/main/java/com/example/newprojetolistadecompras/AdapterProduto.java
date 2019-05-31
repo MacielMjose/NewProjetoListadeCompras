@@ -48,7 +48,7 @@ public class AdapterProduto extends BaseAdapter {
 
         if( convertView == null ){
             convertView = inflater.inflate
-                    (R.layout.layout_lista_produtos, null);
+                    (R.layout.activity_main, null);
             item = new Suporte();
             item.tvCodigo = (TextView)
                     convertView.findViewById(R.id.tvListaCodigo);
